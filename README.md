@@ -1,12 +1,15 @@
 # Lab-How-To-Configure-Multipart-Upload-to-S3-Bucket-using-AWS-CLI
 
-- Type 
+> [!Note]
+> This lab needs to install AWS CLI first. If you don't know how to install it, please follow the instructions of this [guideline](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) . After finished installation, you can proceed the following guideline;
+
+- Type in terminal
 ```
 aws --version
 ``` 
 ![alt text](image-1.png)
 
-- Type 
+- Type in terminal
 ```
 aws configure
 ```
@@ -23,7 +26,7 @@ aws configure
 
 ![alt text](image.png)
 
-- Type 
+- Type in terminal
 ```
 ll -h
 ```
@@ -53,7 +56,8 @@ ls -h
 
 ![alt text](image-6.png)
 
-- Type 
+- Type in terminal
+
 ```
 aws s3api create-multipart-upload --bucket multipart-lab --key video.mp4 
 ```
@@ -63,7 +67,7 @@ aws s3api create-multipart-upload --bucket multipart-lab --key video.mp4
 
 `Fwy8LKON1Bxla9wGFeZR0DfOn3wOxq9AMNO5cFxP8sjvmwXUOV8_vUO4DS93B4ZXkwcurb9otrmZgsl6yEV5ChsM5DrSO8SENki9L0NzZgHx0k_qY7sO4DPf4ErkHTD4LtxjKlzAHUJYdW14jI22Gg--`
 
-- Type
+- Type in terminal
 
 ```
 aws s3api upload-part --bucket multipart-lab --key video.mp4 --part-number 1 --body xaa --upload-id Fwy8LKON1Bxla9wGFeZR0DfOn3wOxq9AMNO5cFxP8sjvmwXUOV8_vUO4DS93B4ZXkwcurb9otrmZgsl6yEV5ChsM5DrSO8SENki9L0NzZgHx0k_qY7sO4DPf4ErkHTD4LtxjKlzAHUJYdW14jI22Gg--
@@ -73,7 +77,8 @@ aws s3api upload-part --bucket multipart-lab --key video.mp4 --part-number 1 --b
 
 ![alt text](image-8.png)
 
-- Type
+- Type in terminal
+
 ```
 aws s3api upload-part --bucket multipart-lab --key video.mp4 --part-number 2 --body xab --upload-id Fwy8LKON1Bxla9wGFeZR0DfOn3wOxq9AMNO5cFxP8sjvmwXUOV8_vUO4DS93B4ZXkwcurb9otrmZgsl6yEV5ChsM5DrSO8SENki9L0NzZgHx0k_qY7sO4DPf4ErkHTD4LtxjKlzAHUJYdW14jI22Gg--
 ```
@@ -82,7 +87,7 @@ aws s3api upload-part --bucket multipart-lab --key video.mp4 --part-number 2 --b
 
 ![alt text](image-9.png)
 
-- Type
+- Type in terminal
 
 ```
 aws s3api upload-part --bucket multipart-lab --key video.mp4 --part-number 3 --body xac --upload-id Fwy8LKON1Bxla9wGFeZR0DfOn3wOxq9AMNO5cFxP8sjvmwXUOV8_vUO4DS93B4ZXkwcurb9otrmZgsl6yEV5ChsM5DrSO8SENki9L0NzZgHx0k_qY7sO4DPf4ErkHTD4LtxjKlzAHUJYdW14jI22Gg-- 
@@ -92,7 +97,8 @@ aws s3api upload-part --bucket multipart-lab --key video.mp4 --part-number 3 --b
 
 ![alt text](image-10.png)
 
-- Type
+- Type in terminal
+
 ```
 aws s3api list-parts --bucket multipart-lab --key video.mp4 --upload-id Fwy8LKON1Bxla9wGFeZR0DfOn3wOxq9AMNO5cFxP8sjvmwXUOV8_vUO4DS93B4ZXkwcurb9otrmZgsl6yEV5ChsM5DrSO8SENki9L0NzZgHx0k_qY7sO4DPf4ErkHTD4LtxjKlzAHUJYdW14jI22Gg--
 ```
@@ -120,7 +126,8 @@ aws s3api list-parts --bucket multipart-lab --key video.mp4 --upload-id Fwy8LKON
 
 ![alt text](image-12.png)
 
-- Type
+- Type in terminal
+
 ```
 aws s3api complete-multipart-upload --multipart-upload file://multipart.json --bucket multipart-lab --key video.mp4 --upload-id Fwy8LKON1Bxla9wGFeZR0DfOn3wOxq9AMNO5cFxP8sjvmwXUOV8_vUO4DS93B4ZXkwcurb9otrmZgsl6yEV5ChsM5DrSO8SENki9L0NzZgHx0k_qY7sO4DPf4ErkHTD4LtxjKlzAHUJYdW14jI22Gg-- 
 ```
