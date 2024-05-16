@@ -1,0 +1,15 @@
+{
+    "Parts": [{
+        "ETag": "d65ea7af65cac7eaedf7498e21e5aa99",
+        "PartNumber":1
+    },
+	{
+        "ETag": "0e746a230d3bd6a13a3dc54f8f1c1937",
+        "PartNumber":2
+    },  
+
+    {
+        "ETag": "136b1424963da6f7e3412444b8bd0468",
+        "PartNumber":3
+    }]
+}
